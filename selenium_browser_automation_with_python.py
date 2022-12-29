@@ -32,3 +32,5 @@ book_links = driver.find_elements("xpath",
 #     print(book_link.get_attribute("href"))
 
 book_links[0].click()
+
+driver.switch_to.window(driver.window_handles[1])
