@@ -38,5 +38,8 @@ driver.switch_to.window(driver.window_handles[1])
 
 time.sleep(3)
 
-# find anchor elements with a span that contains 'paperback', then go into those elements and find the span that contains the text '$'
+# find anchor elements with a span that contains 'Paperback', then go into those elements and find the span that contains the text '$'
 buttons = driver.find_elements("xpath", "//a[.//span[text()[contains(., 'Paperback')]]]//span[text()[contains(., '$')]]")
+
+for button in buttons:
+    print(button.get_attribute("innerHTML"))
