@@ -28,5 +28,7 @@ book_links = driver.find_elements("xpath",
 "//div[contains(@class, 'elementor-column-wrap')][.//h2[text()[contains(., '7 IN 1')]]][count(.//a)=2]//a")
 
 # Loop through the book links and print the inner html of each 
-for book_link in book_links:
-    print(book_link.get_attribute("innerHTML"))
+# for book_link in book_links:
+#     print(book_link.get_attribute("href"))
+
+book_links[0].click()
