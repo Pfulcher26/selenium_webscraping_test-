@@ -21,5 +21,12 @@ for link in links:
         link.click()
         break 
 
+# find the links within the div that contain the class 'elementor-column-wrap'that contains the h2
+# tag with '7 IN 1' within it, limit results to divs that contain only two anchor tags and retrieve 
+# those tags
 book_links = driver.find_elements("xpath", 
-"//div[contains(@class, 'elementor-column-wrap')][.//h2[text()[contains(., '7 IN 1')]]]")
+"//div[contains(@class, 'elementor-column-wrap')][.//h2[text()[contains(., '7 IN 1')]]][count(.//a)=2]//a")
+
+# Loop through the book links and print the inner html of each 
+for book_link in book_links:
+    print(book_link.get_attribute("innerHTML"))
