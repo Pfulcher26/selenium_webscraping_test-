@@ -10,3 +10,5 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 
 driver.get("https://www.neuralnine.com/")
 driver.maximize_window()
+
+links = driver.find_elements("xpath", "//a[@href]")
