@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service 
 from selenium.webdriver.chrome.options import Options
@@ -34,3 +35,8 @@ book_links = driver.find_elements("xpath",
 book_links[0].click()
 
 driver.switch_to.window(driver.window_handles[1])
+
+time.sleep(3)
+
+# find anchor elements with a span that contains 'paperback', then go into those elements and find the span that contains the text '$'
+buttons = driver.find_elements("xpath", "//a[.//span[text()[contains(., 'Paperback')]]]//span[text()[contains(., '$')]]")
