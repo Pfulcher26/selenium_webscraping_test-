@@ -12,3 +12,6 @@ driver.get("https://www.neuralnine.com/")
 driver.maximize_window()
 
 links = driver.find_elements("xpath", "//a[@href]")
+
+for link in links:
+    print(link.get_attribute("innerHTML"))
